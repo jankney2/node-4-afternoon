@@ -23,6 +23,16 @@ app.use(checkSession.checkForSession)
 
 app.get('/api/swag', controller.readSwag)
 
+app.get('/api/user', controller.authController.getUser)
+
+app.post('/api/login', controller.authController.login)
+app.post('/api/register', controller.authController.register)
+
+app.post('/api/signout', controller.authController.signout)
+
+
+
+
 
 app.listen(SERVER_PORT, ()=> console.log("listening on ", SERVER_PORT))
 
